@@ -1,19 +1,24 @@
 <template>
-  <div class="home">
+  <div class="home" v-on:click="closeTodo">
     <Calendar />
-    <TodoList :date="'2018-10-13'" />
+    <TodoList />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Calendar from '@/components/Calendar.vue';
-import TodoList from '@/components/TodoList.vue';
+import Calendar from '@/components/Calendar.vue'
+import TodoList from '@/components/TodoList.vue'
 
 export default {
   name: 'home',
   components: {
-    Calendar, TodoList,
+    Calendar, TodoList
   },
-};
+  methods: {
+    closeTodo () {
+      // this.$bus.$emit('showTodoList')
+    }
+  }
+}
 </script>
